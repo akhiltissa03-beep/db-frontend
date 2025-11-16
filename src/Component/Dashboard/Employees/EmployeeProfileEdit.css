@@ -1,0 +1,110 @@
+
+  
+  .employee-form-container {
+    width: 100%; 
+    margin: 25px;
+    color: black;
+    display: grid;
+    font-weight: 600;
+    font-size: 20px;
+    box-sizing: border-box;
+  }
+  
+  .employee-form {
+  
+    display: grid;
+    margin-top: 0px;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 1fr;
+  }
+  h3 {
+    font-weight : 500;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: black;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    margin-top: 60%;
+    margin-top: 20px;
+  }
+  
+  input {
+    width: 76%;
+    margin-top: 0px;
+    padding: 10px 15px;
+    border: 1px solid gray;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+  }
+  
+  button {
+    width:15%;
+    border: black;
+    padding: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 40px;
+    background: gray;
+    margin-left: 40%;
+    color: #fff;
+  }
+  button:hover{
+      background: black;
+      color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+      .sidebar{
+          text-align: center;
+      }
+    .app-container {
+      margin: 0px;
+      padding: 0px;
+    }
+    .nav {
+      font-size: 12px;
+      margin: 2px;
+      padding: 0px;
+    }
+    .employee-form-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .employee-form {
+      display: block;
+      width: 100%;
+    }
+    label {
+      font-size: 12px;
+    }
+    button {
+      width: 90%;
+      font-size: 12px;
+      margin-left: 0px;
+    }
+    input {
+      width: 74%;
+      font-size: 16px;
+    }
+  }
+  
+  
+ 
+  input{
+    font-size : 12px;
+    font-weight: 400;
+  }
+  
+  label{
+    font-weight : 500;
+    font-size : 20px
+  }

@@ -1,0 +1,62 @@
+.head {
+    display: flex;
+    gap: 15%;
+    margin-top: 0px;
+  }
+  .table {
+    background: #ebe9eb;
+    max-width: fit-content;
+    margin-top: 0px;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+  .user {
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+    gap: 12%;
+    font-size: 15px;
+    color: gray;
+  }
+  button {
+    border: rgb(51, 50, 50);
+    width: 15%;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+    background: rgb(51, 50, 50);
+    color: #fff;
+  }
+  button:hover {
+    background: black;
+    color: #fff;
+  }
+  
+  
+  
+  @media (max-width: 768px) {
+    .table {
+      margin-right: 40px;
+      font-size: 12px;
+      width: 100%;
+    }
+    .details {
+      font-size: 10px;
+    }
+    .user {
+      font-size: 10px;
+      font-weight: 800;
+    }
+    button {
+      font-size: 8px;
+      width: 20%;
+      font-weight: bold;
+    }
+   
+    .num:hover {
+      padding: 5px;
+    }
+  }
+  
