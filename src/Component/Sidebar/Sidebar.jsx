@@ -139,6 +139,7 @@ export default function SideBar() {
             display={{ base: "block", md: "none" }}
           />
         )}
+        
         {/* //laptop view for admin */}
         {!isMobileView && (
           <Box>
@@ -232,6 +233,108 @@ export default function SideBar() {
           </Box>
         )}
 
+
+        {/* //laptop view for admin */}
+        {isMobileView && (
+          <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>Admin Menu</DrawerHeader>
+              <DrawerBody>
+                <Box>
+                  {isAdmin && (
+                    <ListItem p="10px" borderRadius="10px">
+                      {adminMenu.map((item, index) =>
+                        item.submenu ? (
+                          <Accordion allowToggle key={index} width="100%">
+                            <AccordionItem border="none">
+                              <h2>
+                                <AccordionButton
+                                  _hover={{ bg: "gray.100" }}
+                                  px={0}
+                                >
+                                  <DashboardIcon />
+                                  <Text
+                                    as="span"
+                                    ml="8px"
+                                    fontSize="1.5rem"
+                                    flex="1"
+                                    textAlign="left"
+                                    color="black"
+                                  >
+                                    {item.label}
+                                  </Text>
+                                  <AccordionIcon />
+                                </AccordionButton>
+                              </h2>
+                              <AccordionPanel pb={2}>
+                                {item.submenu.map((sub, i) => (
+                                  <Flex
+                                    key={i}
+                                    alignItems="center"
+                                    ml="40px"
+                                    mt={2}
+                                    _hover={{ bg: "gray.50", borderRadius: "6px" }}
+                                  >
+                                    <NavLink
+                                      to={sub.path}
+                                      style={{
+                                        textDecoration: "none",
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
+                                    >
+                                      <Text
+                                        as="span"
+                                        color="black"
+                                        fontSize="1.3rem"
+                                        _hover={{ textDecoration: "underline" }}
+                                      >
+                                        {sub.label}
+                                      </Text>
+                                    </NavLink>
+                                  </Flex>
+                                ))}
+                              </AccordionPanel>
+                            </AccordionItem>
+                          </Accordion>
+                        ) : (
+                          <Flex key={index} 
+                            alignItems="center" 
+                            mt={menuMarginMap[item.path] ?? 4}
+                            _hover={{ bg: "gray.100" }}
+                            py={2}   
+                          >
+                            <DashboardIcon style={{ marginTop: "0rem" }} />
+                            <NavLink
+                              to={item.path}
+                              style={{
+                                textDecoration: "none",
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
+                              <Text
+                                as="span"
+                                color="black"
+                                fontSize="1.5rem"
+                                marginLeft="8px"
+                                _hover={{ textDecoration: "underline" }}
+                              >
+                                {item.label}
+                              </Text>
+                            </NavLink>
+                          </Flex>
+                        )
+                      )}
+                    </ListItem>
+                  )}
+                </Box>
+              </DrawerBody>
+            </DrawerContent>
+          </Drawer>
+        )}
       </List>
       <List>
         {/* laptop view for user */}
@@ -353,6 +456,7 @@ export default function SideBar() {
             )}
           </Box>
         )}
+        
 
         {/* mobile view for user */}
         {isMobileView && (
@@ -471,8 +575,6 @@ export default function SideBar() {
                             )}
                           </AccordionItem>
                         </Accordion>
-
-                        {/* <Divider borderWidth="1px" borderColor={"gray"} /> */}
                         <ListItem
                           style={{ marginTop: "1.5rem" }}
                           className="listItem"
